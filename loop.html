@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for-loop</title>
+</head>
+<body>
+    <script>
+        for(let i=0;i<10;i++){
+            console.log("value",i);
+        }
+        // table of 5
+        for(let i=5;i<51;i=i+5){
+            console.log(i);
+        }
+        // 
+        for(let i=50;i>4;i=i-5){
+            console.log(i);
+        }
+
+        for(let i=0;i<10;i++){
+            if(i%2==0){
+                console.log(i);
+            }
+        }
+
+
+        // while loop
+
+        let i =0;
+        while(i<=10){
+            console.log(i,"while-loop");
+            i++;
+        }
+
+        let j =10;
+        while(j>=0){
+            console.log(j,"while-loop");
+            j--;
+        }
+
+        // do-while loop
+        let k=0
+        do{
+            console.log(k,"do-while-loop");
+            k++;
+        }
+        while(k<10)
+
+        // For--in loop (Object)
+        let animal ={
+            name:"zebra",
+            leg:4
+            }
+            for(let key in animal){
+                console.log(`${key}:`,animal[key]);
+            }
+            // Arrays - For-in loop
+            let names = ["Rahul","Neha","Aman","Rohan"];
+            for(let index in names){
+                console.log(index,names[index]);
+            } 
+
+        // For--of loop (Array)
+        // it returns value directly
+            for(let name of names){
+                console.log(name)
+            }
+
+    </script>
+</body>
+</html>
