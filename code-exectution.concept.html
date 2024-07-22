@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Execution</title>
+</head>
+<body>
+    <script src="code-execution-concept.js"></script>
+   <section>
+    <p>
+        <!-- How JS executes code -->
+         1. whenever js engine executes codes it creates <b style="color:green">execution context.</b><p>
+            <p>
+            2. Execution context me 2 phase hota hai 
+         <ol style="list-style-type: decimal;">
+            <li>
+                 <b>Memory Creation Phase.->Creation Phase</b>  
+            </li>
+            <li>
+                <b>Code Execution Phase.</b>   
+            </li>
+    </p>
+         </ol>
+           
+   </section>
+   <section>
+        <h2> Memeory Creation Phase:</h2>
+        <p>
+            let a = "Namaste World";
+            <br>
+            <br>
+
+function first(){  <br>
+    console.log("Inside first function");
+    <br>
+    second();  <br>
+    console.log("Again inside first function");  <br>
+}
+<br>
+<br>
+
+function second(){  <br>
+    console.log("Inside second function");  <br>
+}  <br><br>
+first();  <br>
+<br>
+
+console.log("Inside Global Execution Context");
+
+        </p>
+        <br>
+        <p>
+           <h4>M(Memory creation Phase):</h4> 
+           <h5> we are declaring varaibles and functions</h5>
+                variable a = "Namste world" <br>
+                first = {} <br>
+                second = {} <br>
+        </p>
+        <p>
+            <h4>C(Code execution Phase):</h4> 
+            <h5> we are calling varaibles and functions</h5>
+                first() -> will call then it will create callstack.<br>
+                inside the stack the whole set of execution i.e memory + code execution is called <b>GEC(Global execution code)</b> will placed 1st in the stack<br>
+                <br>
+                <b>Note:</b> when we call function then it creates again function execution context with memory and code execution.
+                and destroy after executing function.
+            </p>
+   </section>
+</body>
+</html>
