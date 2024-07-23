@@ -12,3 +12,5 @@ https://www.teaching-materials.org/javascript/
 
 https://dorey.github.io/JavaScript-Equality-Table/
 https://wtfjs.com/
+
+https://edabit.com/challenges -> VIMP

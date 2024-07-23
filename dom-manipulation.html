@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM - Manipulation</title>
+  </head>
+  <body>
+    <ul id="element">
+        <li class="first">One</li>
+        <li class="first">Two</li>
+        <li class="first">Three</li>
+    </ul>
+    <table>
+        <tr>
+            <td>One</td>
+            <td>Two</td>
+        </tr>
+        <tr>
+            <td>Three</td>
+            <td>Four</td>
+        </tr>
+    </table>
+
+    <!-- FOr exercise -->
+    <!-- <table>
+        <tr>
+            <td>1:1</td>
+            <td>2:1</td>
+            <td>3:1</td>
+            <td>4:1</td>
+            <td>5:1</td>
+           
+        </tr>
+        <tr>
+            <td>1:2</td>
+            <td>2:2</td>
+            <td>3:2</td>
+            <td>4:2</td>
+            <td>5:2</td>
+           
+        </tr>
+        <tr>
+            <td>1:3</td>
+            <td>2:3</td>
+            <td>3:3</td>
+            <td>4:3</td>
+            <td>5:3</td>
+           
+        </tr>
+        <tr>
+            <td>1:4</td>
+            <td>2:4</td>
+            <td>3:4</td>
+            <td>4:4</td>
+            <td>5:4</td>
+           
+        </tr>
+        <tr>
+            <td>1:5</td>
+            <td>2:5</td>
+            <td>3:5</td>
+            <td>4:5</td>
+            <td>5:5</td>
+           
+        </tr>
+    </table>
+     -->
+    <script>
+        // Root Node
+        console.log(document.documentElement);
+        console.log(document.body);
+        console.log(document.head);
+
+        // child nodes
+        console.log(document.body.childNodes);
+        console.log(document.head.childNodes);//will include spaces like indentation along with tags
+        console.log(document.body.children,"body-child");//will give you the specific tags
+
+        // fetch specific child nodes using for-of -> it's not an array
+        for(nodes of document.body.children){
+            console.log(document.body.children);
+        }
+
+
+
+        // First and second child of nodes
+        console.log(document.body.firstChild);
+        console.log(document.body.lastChild);
+
+        // specific child nodes
+        console.log(document.body.firstElementChild);
+        console.log(document.body.lastElementChild);
+
+
+        // using array -> converting children into array
+        const childrenOfBody = Array.from(document.body.children);
+        console.log(childrenOfBody);
+
+
+        // Finding Siblings
+        console.log(document.body.children);
+        const ulTag = document.body.children[0];
+        
+        console.log(ulTag);
+        const firstLi = ulTag.children[0];
+        const secondLi = ulTag.children[1];
+
+        console.log(secondLi.previousElementSibling);
+
+
+        // Table DOM Manipulation
+
+        const tableTag = document.body.children[1];
+        console.log(tableTag)
+        console.log(tableTag.tBodies[0].rows[0].cells[1].textContent)
+        console.log(tableTag.tBodies[0].rows[0].cells[1].style="color:blue;background-color:gray")
+
+        // ID Search
+
+        // Note: whenever we give id to any element or tag so that that tag will become global and we can access via "idName"
+        //  element.style.backgroundColor = "red"
+        //  alternate using getElementById()
+        const ulTagWithId = document.getElementById("element")
+        ulTagWithId.style.backgroundColor = "green";
+        console.log()
+
+         // class Name
+
+         const listItem =document.getElementsByClassName("first");
+         console.log(listItem);
+
+         // By name
+            document.getElementsByName("")
+         // by tagName
+         document.getElementsByTagName("")
+
+        //  querySelector
+
+        document.querySelector("first");
+        document.querySelectorAll("first");// Note: don't use querySelectorAll if we are dealing with id
+
+        document.querySelector("element");
+
+        // Query selector
+        console.log(document.querySelectorAll('ul > li:last-child'));
+        const lastChild = document.querySelectorAll('ul > li:last-child');
+        console.log(lastChild[0].textContent)
+    </script>
+  </body>
+</html>
