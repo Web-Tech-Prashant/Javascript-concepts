@@ -1,0 +1,25 @@
+.box{
+    background-color: yellow;
+    height: 80px;
+    width: 80px;
+    border: 2px solid black;
+    margin: 5px;
+    text-align: center;
+    line-height: 30px;
+}
+#boxdiv{
+    background-color: lightblue;
+    height: 220px;
+    width: 180px;
+    padding-left: 12px;
+    padding-top: 12px;
+    text-decoration: solid;
+    font-size: x-large;
+    font-weight: 900;
+}
+.mypara{
+color: rebeccapurple;
+}
+.newclass{
+    background-color: green;
+}

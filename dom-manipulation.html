@@ -6,7 +6,7 @@
     <title>DOM - Manipulation</title>
   </head>
   <body>
-    <ul id="element">
+    <ul id="element" data="newattribute">
         <li class="first">One</li>
         <li class="first">Two</li>
         <li class="first">Three</li>
@@ -21,7 +21,7 @@
             <td>Four</td>
         </tr>
     </table>
-
+    <div id="firstdiv">First Div</div>
     <!-- FOr exercise -->
     <!-- <table>
         <tr>
@@ -146,6 +146,51 @@
         console.log(document.querySelectorAll('ul > li:last-child'));
         const lastChild = document.querySelectorAll('ul > li:last-child');
         console.log(lastChild[0].textContent)
+
+        // finding attributes
+        // we can use document.getElementById("").getAttribute()  or 
+        //    we can directly use element.
+        console.log(element.getAttribute("data"));
+        console.log(element.setAttribute("newattribute","next-attribute"));
+        console.log(element.getAttribute("newattribute"));
+        console.log(element.hasAttribute("newattribute"));
+        console.log(element.removeAttribute("newattribute"));
+        console.log(element.hasAttribute("newattribute"));
+        console.log(element.attributes);
+
+        // Exercise: create few links with <a href="">add external links few would be file path
+                //  find the external link and change the color for it. 
+
+
+                // VIMP: create and remove the node element.
+         
+                const newDiv = document.createElement('div');
+
+                const newText = document.createTextNode("Namaste Prashant");
+                // NOte: we can also create textnode directly.
+
+                newDiv.textContent="Namaste World";
+                // for multiple line always use backticks
+    //             newDiv.innerHTML=`
+    //             <ul id="element" data="newattribute">
+    //     <li class="first">One</li>
+    //     <li class="first">Two</li>
+    //     <li class="first">Three</li>
+    // </ul>
+    //             `
+                
+                newDiv.appendChild(newText)
+                // body.append(newDiv);
+                // body.prepend(newDiv)
+                // body.before(newDiv);
+                // body.after(newDiv);
+
+                // here firstdiv is the id of the div and id is the global so it will treat as a variable
+                firstdiv.replaceWith(newDiv);
+
+                // remove
+                firstdiv.remove();
+
     </script>
   </body>
 </html>
